@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap vertical menu / navigation bar</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+<style type="text/css">
+	.badge:hover {
+		background-color: black;
+	}
+</style>
+  
+</head>
+
+<body>
+  <div class="container">
+  <div class="jumbotron">CREATE EVENT</div>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">BASIC DETAILS</a></li>
+            <li><a href="#">LOCATIONS</a></li>
+            <li><a href="#">PHOTO UPLOADS</a></li>
+            <li><a href="#">EVENT DETAILS</a></li>
+            <li><a href="#">TICKET DETAILS</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+  <div class="row">
+  <form class="col s12">
+    <div class="row">
+
+  
+  <form class="form-horizontal image-form" role="form">
+  <div>
+    <span class="btn btn-default btn-file btn-block">
+      Upload ONE 1:1 THUMBNAIL IMAGE <br>
+      <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" title="Select an image file" />
+    </span><br>
+  </div>
+  <div class="img-wrapper row"></div>
+  </form>
+    <div>EVENT NAME</div>
+      <div class="input-field col s12">
+        <input class="form-control" id="name" name="name" placeholder="EVENT NAME" type="text" required>
+              </div>
+      </div>
+      <br>
+       <div class="row">
+       <div>ORGANISATION NAME</div>
+      <div class="input-field col s12">
+        <input class="form-control" id="name" name="name" placeholder="ORGANISATION NAME" type="text" required>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+    <div>MAIN DESCRIPTION</div>
+    <div class="input-field col s12">
+        <textarea class="form-control" id="comments" name="comments" placeholder="" rows="5"></textarea>
+      </div>
+    </div>
+    <br>
+     <div class="row">
+     <div>MAJOR ATTRACTIONS</div>
+    <div class="input-field col s12">
+        <textarea class="form-control" id="comments" name="comments" placeholder="" rows="5"></textarea>
+      </div>
+    </div><br><br>      
+  <a href="index1.html"><button type="submit" class="btn btn-default">Save &amp; Continue</button></a>
+
+  </div>
+</div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js'></script>
+
+    <script  src="js/index.js"></script>
+       <script  src="js/index2.js"></script>
+<br><br><br>
+</body>
+</html>
