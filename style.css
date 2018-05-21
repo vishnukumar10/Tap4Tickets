@@ -1,0 +1,535 @@
+* { box-sizing:border-box }
+*:before, *:after { box-sizing:inherit }
+
+/* Basic styles */
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-family: @font-family-base;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.42857143;
+    color: black;
+    background-color: #f7f7f7;    
+}
+
+a { text-decoration: none }
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+main {
+    margin-top: 10rem;
+    text-align: center;
+}
+/* Header styles */
+header {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 7rem;
+    padding: 0 15px;
+    
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    top: 0;
+    width: 100%
+}
+
+.site-logo {
+    transition: color 200ms cubic-bezier(.55, 0, .1, 1);
+    color: #30acff;
+    font-size: 3rem;
+}
+
+.ok-header__logo:hover {color: #546edb}
+
+/* okayNav styles */
+body.okayNav-loaded {
+  overflow-x: hidden;
+}
+.okayNav:not(.loaded) {
+  visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.okayNav ul {
+   z-index: 99;
+  /* We want two navigations - one hidden and one visible */
+  float: left;
+}
+.okayNav a {
+   z-index: 99;
+  /* Links general styling */
+  color: #2e2e33;
+  font-size: 1.4rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+.okayNav__nav--visible {
+   z-index: 99;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.okayNav__nav--visible li {
+   z-index: 99;
+  display: inline-block;
+}
+.okayNav__nav--visible a {
+   z-index: 99;
+  /* Link styling for the visible part of the nav */
+  display: block;
+  transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);
+  padding: 15px 15px;
+}
+.okayNav__nav--visible a:hover {
+   z-index: 99;
+  color: #546edb;
+}
+/* Link styling for the off-screen part of the nav */
+.okayNav__nav--invisible {
+   z-index: 99;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+}
+.okayNav__nav--invisible a {
+   z-index: 99;
+  background: #fff;
+  width: 240px;
+  display: block;
+  padding: 15px;
+}
+.okayNav__nav--invisible.nav-left {
+   z-index: 99;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.okayNav__nav--invisible.nav-right {
+   z-index: 99;
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.okayNav__nav--invisible.transition-enabled { 
+  z-index: 99;
+  transition: -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+}
+.okayNav__nav--invisible.nav-open {
+   z-index: 99;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+/* Kebab icon */
+.okayNav__menu-toggle {
+   z-index: 99;
+  position: relative;
+  transition: -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  cursor: pointer;
+  width: 40px;
+  height: 20px;
+  float: left;
+  z-index: 1;
+  top: 15px;
+}
+.okayNav__menu-toggle.okay-invisible {
+   z-index: 99;
+  position: absolute;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.okayNav__menu-toggle span {
+   z-index: 99;
+  display: block;
+  position: absolute;
+  margin: auto;
+  height: 4px;
+  width: 4px;
+  background: #2e2e33;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+.okayNav__menu-toggle span:nth-child(1) {
+   z-index: 99;
+  top: 0;
+}
+.okayNav__menu-toggle span:nth-child(2) {
+   z-index: 99;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.okayNav__menu-toggle span:nth-child(3) {
+   z-index: 99;
+  bottom: 0;
+}
+.okayNav__menu-toggle.icon--active {
+   z-index: 99;
+  /* Kebab icon when off-screen nav is open */
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.okayNav__menu-toggle.icon--active span {
+  z-index: 99;
+  background: #546edb;
+}
+.jumbotron {
+    background-color: lightblue;
+    color:black;
+    text-align: center;
+    z-index: 0;
+
+  
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+body,
+html {
+  min-height: 100vh;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: black;
+  /*background: #1f233c;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1f233c), color-stop(100%, #434793));
+   background: -webkit-linear-gradient(top, #1f233c 0%, #434793 100%);
+  background: linear-gradient(to bottom, #1f233c 0%, #434793 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1f233c', endColorstr='#434793', GradientType=0);*/
+}
+/*.container {
+  color: black;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.graph {
+  color: black;
+  display: block;
+  text-align: center;
+  background-color: blue;
+  z-index: -1;
+  width: 50%;
+}
+
+.sleep-good {
+  fill: #2de4e3;
+}
+.sleep-bad {
+  fill: #ff666f;
+}
+.sleep-medium {
+  fill: #6f5df6;
+}
+.start-time,
+.end-time {
+  letter-spacing: 0.1em;
+  font-size: 0.75em;
+}
+.axis {
+  shape-rendering: crispEdges;
+}
+.axis path {
+  fill: none;
+  stroke: rgba(152, 175, 197, 0.7);
+}
+.axis text {
+  fill: #FFF;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+.axis .x-axis-title {
+  letter-spacing: 0.45em;
+}
+.title {
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 2.5em;
+}
+.legend {
+  text-align: center;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+  color: black;
+}
+.legend .bloq {
+  display: inline-block;
+  padding: 8px 20px;
+  padding-bottom: 10px;
+}
+.legend .bloq + .bloq {
+  margin-left: 4px;
+}
+.legend .blue {
+  background-color: #2de4e3;
+}
+.legend .purple {
+  background-color: #6f5df6;
+}
+.legend .red {
+  background-color: #ff666f;
+}
+
+*/
+html, body {
+  background-color: ;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  color: rgba(255,255,255,0.75);
+}
+
+h1 {
+  margin: 60px auto 0;
+  width: 550px;
+  text-align: center;
+  font-size: 36px;
+}
+
+.base {
+  position: absolute;
+  bottom: 0;
+  left: -35px;
+  width: 825px;
+  height: 20px;
+  background-color: rgba(255,255,255,0.05);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -webkit-transform: skew(45deg);
+}
+
+.chart-container {
+  overflow: scroll;
+  position: relative;
+  z-index: 0;
+  margin: 100px auto 0;
+  width: 100%;
+  height: auto;
+  /*border: solid 1px #bbb;*/
+  /*background-color: rgba(255,255,255,0.055);
+/*  -webkit-box-shadow: 0 8px 6px -6px #444;
+*/}
+
+.chart-container:after {
+  content:"";
+  position: absolute;
+  top: -15px;
+  left: -8px;
+  height: 15px;
+  width: 800px;
+  background-color: rgba(255,255,255,0.055);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  -webkit-transform: skew(45deg);
+  transform: skew(45deg);
+}
+
+.chart-container > table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+}
+
+.chart-container table  tr  td {
+  width: 100px;
+  height: 98x;
+  border: solid 1px  rgba(255,255,255,0.05);
+
+}
+
+.meter {
+  position: relative;
+  top: 0px;
+  left: -30px;
+  height: 500px;
+  width: 30px;
+  background-color: rgba(20,113,163,0.5);
+  border-left: solid 1px rgba(255,255,255,0.5);
+
+}
+
+.meter:before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -15px;
+  width: 15px;
+  height: 500px;
+  background-color: rgba(14,81,117,0.9);
+   -moz-transform: skewY(45deg);
+  -o-transform: skewY(45deg);
+  -webkit-transform: skewY(45deg);
+  transform: skewY(45deg);
+}
+
+.meter:after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -8px;
+  width: 30px;
+  height: 15px;
+  background-color: rgba(13,171,217,0.45);
+   -moz-transform: skewX(45deg);
+  -o-transform: skewX(45deg);
+  -webkit-transform: skewX(45deg);
+  transform: skewX(45deg);
+}
+
+.meter li {
+  position: relative;
+  list-style-type: none;
+  height: 99px;
+  border-bottom: solid 1px #0DABD9;
+}
+
+.meter li:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -30px;
+  width: 30px;
+  height: 100%;
+  border-bottom: solid 1px #0DABD9;
+  -moz-transform: skewY(45deg);
+  -o-transform: skewY(45deg);
+  -webkit-transform: skewY(45deg);
+  transform: skewY(45deg);
+}
+
+.meter li:last-child {
+  border-bottom: none;
+}
+
+.meter li:last-child:before {
+  border: 0;
+}
+
+.meter li div {
+  position: absolute;
+  left: -115px;
+  top: 0;
+  padding: 55px 0 0;
+  width: 80px;
+  color: black;
+  text-align: right;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+
+/* ---------------------
+  Vertical Bars
+----------------------*/
+
+.bar {
+  float: left;
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  height: 35%;
+  width: 40px;
+  margin: 0 40px;
+  background-color: green;
+}
+
+.bar:before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  bottom: 7px;
+  height: 100%;
+  width: 15px;
+  background-color: rgba(107,255,49,0.25);
+  -webkit-transform: skewY(45deg);
+}
+
+.bar:after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -8px;
+  width: 40px;
+  height: 15px;
+  background-color: rgba(107,255,49,0.45);
+  -moz-transform: skewX(45deg);
+  -o-transform: skewX(45deg);
+  -webkit-transform: skewX(45deg);
+  transform: skewX(45deg);
+}
+
+.two {
+  left: 12.5%;
+  height: 57%;
+}
+
+.three {
+  left: 25%;
+  height: 85%;
+}
+
+.four {
+  left: 37.5%;
+  height: 35%;
+}
+
+.five {
+  left: 50%;
+  height: 63%;
+}
+
+.six {
+  left: 62.5%;
+  height: 45%;
+}
+
+.seven {
+  left: 75%;
+  height: 15%;
+}
+
+.eight {
+  left: 87.5%;
+  height: 32%;
+}
+
+
+
+
+
