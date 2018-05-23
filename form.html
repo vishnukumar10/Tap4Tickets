@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Vendor form</title>
+  
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
+<link rel="stylesheet" type="text/css" href="form.css">
+  
+  
+</head>
+
+<body>
+
+<div class="container">
+<h3>Personal information</h3>
+<br>
+  <div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="contact@myweb.com" id="email" type="text" class="validate">
+        <label for="email">Login email*</label>
+      </div>
+      </div>
+       <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Your brand name?" id="brandname" type="text" class="validate">
+        <label for="organizer">Brand name*</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="Your brand name?" id="category" type="text" class="validate">
+        <label for="organizer">Category name*</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="contactperson" type="text" class="validate">
+        <label for="organizer">Contact Person name</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="additionalemail" type="text" class="validate">
+        <label for="organizer">Additional email ID</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="contactnumber" type="text" class="validate">
+        <label for="organizer">Contact number*</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="xyz.com" id="website" type="text" class="validate">
+        <label for="organizer">Website link</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="fburl" type="text" class="validate">
+        <label for="organizer">Facebook URL</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="igurl" type="text" class="validate">
+        <label for="organizer">Instagram URL</label>
+      </div>
+    </div>
+     <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="vidurl" type="text" class="validate">
+        <label for="organizer">YouTube/Vimeo URL</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="input-field col s12">
+           <textarea id="description" class="materialize-textarea" length="140"></textarea>
+        <label for="organizer">Additional Information</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="address" type="text" class="validate">
+        <label for="organizer">Address</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="input-field col s12">
+        <input placeholder="" id="" type="text" class="validate">
+        <label for="organizer">YouTube/Vimeo URL</label>
+      </div>
+    </div>
+         </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <select>
+          <option value="" disabled selected>Choose event type</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Event type</label>
+      </div>
+      <div class="input-field col s6">
+        <select multiple>
+          <option value="" disabled selected>Choose style(s)</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Styles</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <label>Begin date</label>
+        <input id="beginDate" type="date" class="datepicker">
+        
+      </div>
+      <div class="input-field col s6">
+        <label>End date</label>
+        <input id="endDate" type="date" class="datepicker">
+        
+      </div>
+    </div>
+   
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="http://www.mywebsite.com" id="website" type="text" class="validate">
+        <label for="website">Website</label>
+      </div>
+      
+    </div>
+
+    <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description" class="materialize-textarea" length="140"></textarea>
+            <label for="description">Describe the event in a tweet!</label>
+          </div>
+        </div>
+  </form>
+</div>
+  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
+
+    <script  src="form.js"></script>
+</div>
+</body>
+</html>
