@@ -1,0 +1,10 @@
+body {
+	background-image: url("https://static.vecteezy.com/system/resources/previews/000/108/103/non_2x/free-geometric-bauhaus-vector-pattern.jpg");
+	background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.container {
+	background-color: white;
+	margin-top: 20px;
+}
