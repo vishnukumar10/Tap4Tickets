@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CLIENT FORM-PARTIES</title>
+  
+    <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+<!--       <link rel="stylesheet" href="css/style1.css">  -->     
+  
+</head>
+
+<body>
+  <div class="container">
+   <div class="jumbotron">CREATE EVENT</div>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">BASIC DETAILS</a></li>
+            <li><a href="index1.html">LOCATIONS</a></li>
+            <li><a href="index2.html">PHOTO UPLOADS</a></li>
+            <li class="active"><a href="#">EVENT DETAILS</a></li>
+            <li><a href="">TICKET DETAILS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-9">
+      <div class="row">
+
+      <div class="input-field col s6">
+        <h5 style="font-family: Montserrat, sans-serif;font-size: 16.5px;"><strong>START DATE:</strong></h5>
+        <input id="beginDate" type="date" class="datepicker">
+        <br><br>
+      </div>
+      <div class="input-field col s6">
+        <H5 style="font-family: Montserrat, sans-serif;font-size: 16.5px;"><strong>END DATE:</strong></H5>
+        <input id="endDate" type="date" class="datepicker">
+        
+      </div>
+
+
+
+  <!--   <div class='container'>
+    <div class='date-picker'></div>
+    <div class='form'>
+      <label>Date range:</label>
+      <select>
+        <option value=''>-- Custom date range --</option>
+        <option value='today'>Today</option>
+        <option value='yesterday'>Yesterday</option>
+        <option value='week'>Current week</option>
+        <option value='month'>Current month</option>
+        <option value='year'>Current year</option>
+      </select>
+      <br>
+      <input class='start_date'>
+       -
+      <input class='end_date'>
+    </div>
+  </div> -->
+
+
+    </div>
+    <br>
+        <a href="index2.html"><button type="submit" class="btn btn-default">Back</button></a>
+  <a href="index4.html"> <button type="submit" class="btn btn-default">Save &amp; Continue</button></a>
+    </div>
+</div>
+</div>
+</div>
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js'></script>
+
+   <!--  <script  src="js/index.js"></script> -->
+
+<script>
+  
+  (function() {
+  var date_picker, el, end_date_input, start_date_input;
+
+  el = $('.container');
+
+  start_date_input = el.find('.start_date');
+
+  end_date_input = el.find('.end_date');
+
+  date_picker = el.find('.date-picker').datepicker({
+    numberOfMonths: 2,
+    onSelect: function(dateText, inst) {
+      var current, new_current;
+      current = el.data('current');
+      current || (current = 'start_date');
+      el.data(current, $(this).datepicker('getDate'));
+      el.find("." + current).val(dateText);
+      if (current === "start_date") {
+        new_current = "end_date";
+        el.data(new_current, null);
+        el.find("." + new_current).val('');
+      } else {
+        new_current = "start_date";
+      }
+      return el.data('current', new_current);
+    },
+    beforeShowDay: function(date) {
+      var className;
+      if (el.data('start_date') && el.data('end_date') && el.data('start_date').getTime() <= date.getTime() && el.data('end_date').getTime() >= date.getTime()) {
+        className = 'date-range-selected';
+      } else {
+        className = '';
+      }
+      return [true, className];
+    }
+  });
+
+  el.on('change', 'select', function() {
+    var end_Date, end_date, first, last, start_date, today, value, yesterday;
+    value = $(this).val();
+    today = new Date();
+    switch (value) {
+      case 'today':
+        start_date = end_date = today;
+        break;
+      case 'yesterday':
+        yesterday = new Date(today.setDate(today.getDate() - 1));
+        start_date = end_date = yesterday;
+        break;
+      case 'week':
+        first = today.getDate() - today.getDay();
+        last = first + 6;
+        start_date = new Date(today.setDate(first));
+        end_date = new Date(today.setDate(last));
+        break;
+      case 'month':
+        start_date = new Date(today.getFullYear(), today.getMonth(), 1);
+        end_date = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        break;
+      case 'year':
+        start_date = new Date(today.getFullYear(), 0, 1);
+        end_date = new Date(today.getFullYear(), 11, 31);
+        break;
+      default:
+        start_date = end_Date = null;
+    }
+    if (start_date && end_date) {
+      start_date.setHours(0, 0, 0, 0);
+      end_date.setHours(0, 0, 0, 0);
+      start_date_input.val($.datepicker.formatDate(date_picker.datepicker('option', 'dateFormat'), start_date));
+      end_date_input.val($.datepicker.formatDate(date_picker.datepicker('option', 'dateFormat'), end_date));
+      el.data('start_date', start_date);
+      el.data('end_date', end_date);
+    } else {
+      el.data('start_date', null);
+      el.data('end_date', null);
+    }
+    return date_picker.datepicker('refresh');
+  });
+
+}).call(this);
+
+</script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+</body>
+</html>

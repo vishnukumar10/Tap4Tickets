@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CLIENT FORM-PARTIES</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+      <link rel="stylesheet" href="css/style.css">
+<style type="text/css">
+  .badge:hover {
+    background-color: black;
+  }
+  /*just for demo...*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+ /* font-family: BlinkMacSystemFont, futura, 'Roboto', sans-serif;
+*/}
+
+/*.plusminus {
+  display: inline-block;
+  position: relative;
+  font-size: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  width: 44px;
+  height: 132px;
+}
+.plusminus button {
+  display: block;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 30.8px;
+  line-height: 1;
+  font-family: bonds, sans-serif;
+  cursor: pointer;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+}
+.plusminus button:focus {
+  outline: none;
+  color: #2bebaf;
+}
+.plusminus button:disabled {
+  background: #999;
+  color: #ccc;
+  cursor: default;
+}
+.plusminus button:first-child {
+  bottom: 0;
+}
+.plusminus button:first-child:before {
+  content: "-";
+}
+.plusminus button:last-child {
+  top: 0;
+}
+.plusminus button:last-child:before {
+  content: "+";
+}
+.plusminus button:last-child:focus {
+  color: #ff6367;
+}
+.plusminus input[type="number"] {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 44px;
+  margin: 0;
+  padding: 0 0 16.92308px;
+  border: 0;
+  font-size: 17.6px;
+  font-weight: bold;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.plusminus input[type="number"]::-webkit-outer-spin-button, .plusminus input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.plusminus:after {
+  content: "QTY";
+  position: absolute;
+  font-size: 9.68px;
+  left: 0;
+  right: 0;
+  line-height: 1;
+  padding: 3.52px 0 3.52px 0;
+  width: 44px;
+  margin: 0 auto;
+  border-top: 1px solid #ccc;
+  color: #888;
+  text-align: center;
+  bottom: 34%;
+}
+.plusminus.horiz {
+  width: 132px;
+  height: 44px;
+}
+.plusminus.horiz button:first-child {
+  left: 0;
+}
+.plusminus.horiz button:last-child {
+  right: 0;
+}
+.plusminus.horiz:after {
+  bottom: 0;
+}
+.plusminus.horiz input[type="number"] {
+  position: absolute;
+  top: 0;
+  left: 44px;
+}
+.plusminus.stacked {
+  width: 88px;
+  height: 88px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.plusminus.stacked:after {
+  width: 100%;
+  bottom: 50%;
+}
+.plusminus.stacked button {
+  float: none;
+  top: auto;
+  bottom: 0;
+}
+.plusminus.stacked button:first-child {
+  left: 0;
+}
+.plusminus.stacked button:last-child {
+  right: 0;
+}
+.plusminus.stacked input[type="number"] {
+  top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid #eee;
+  width: 100%;
+}
+.plusminus.stacked input[type="number"]:after {
+  width: 100%;
+}
+*/
+</style>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron" style="width: 100%;">CREATE EVENT</div>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Sidebar menu</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html" style="font-size: 14px;">BASIC DETAILS</a></li>
+            <li><a href="index1.html" style="font-size: 14px;">LOCATIONS</a></li>
+            <li><a href="index2.html" style="font-size: 14px;">PHOTO UPLOADS</a></li>
+            <li><a href="index3.html" style="font-size: 14px;">EVENT DETAILS</a></li>
+            <li class="active"><a href="#" style="font-size: 14px;">TICKET DETAILS</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="container" style="max-width: 600px; margin-bottom: 40px;">
+<!--   <section class="step-indicator active">
+      <div class="step step1 active">
+          <div class="step-icon">1</div>
+        <p style="bottom: -40px">Tickets type</p>
+      </div>
+    <div class="indicator-line"></div>
+    <div class="step step2">
+        <div class="step-icon">2</div>
+      <p style="bottom: -40px">Ticket Category</p>
+    </div>
+    <div class="indicator-line"></div>
+    <div class="step step3">
+        <div class="step-icon">3</div>
+      <p style="bottom: -40px">Final Details</p>
+    </div>
+
+  </section> -->
+</div><h3 style="font-weight: bold; font-size: 22px;">CATEGORIZING OF TICKETS</h3><br>
+      <div class="col-sm-24">
+      <br><h5 style="font-weight: bold;">NUMBER OF CATEGORIES</h5>
+      
+      </div>
+<br>    <div class="form-group">
+      <select class="form-control" value="select" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--       <div class="plusminus horiz">
+        <button></button>
+        <input type="number" name="productQty" value="1" min="18" max="10000">
+        <button></button> 
+      </div>
+      <div class="plusminus horiz">
+        <button></button>
+        <input type="number" name="productQty" value="1" min="1" max="10000">
+        <button></button> 
+      </div> -->
+ <br><br><br>
+      <h4 style="font-weight: bold;">THE FIELDS THAT HAVE TO BE FILLED BY THE CUSTOMER</h4><br>
+      <label><input type="checkbox" value="" style="color: green;">Name</label><br><br>
+      <label><input type="checkbox" value="" style="color: green;">Age</label><br><br>
+      <label><input type="checkbox" value="" style="color: green;">Gender</label><br><br>
+
+
+
+  <div class="checkbox">
+  <label><input type="checkbox" value="" style="color: green;"></label><a href="#" style="color: black;" target="_blank">I agree to all terms and conditions     <i class="fa fa-external-link"></i></a>
+</div>
+
+
+
+
+<div class="legal__rules" aria-expanded="false" aria-hidden="true" style="display: none; opacity:0; filter:alpha(opacity=0);">
+
+            <!-- Legal Rule 1 -->
+            <div class="legal__rule">
+              <div class="toggle--checkbox">
+                <label class="toggle__label" for="">This is hidden and removed from the DOM</label>
+                <label class="toggle__agree">
+                  <input type="checkbox" class="checkbox"/>
+                  <span class="control-indicator"></span>
+                  <span class="toggle__button">
+                    Please agree to our 
+                    <a href="">terms and conditions <i class="fa fa-external-link"></i></a>
+                    and
+                    <a href="">privacy policy <i class="fa fa-external-link"></i></a>
+                    to continue.
+                    <sup>1</sup> 
+                  </span>
+                </label>
+                <label class="toggle__disagree">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="toggle__button">Disagree</span>
+                </label>
+              </div>
+            </div>
+
+
+            </div>
+    <a href="index3.html"><button type="submit" class="btn btn-default">Back</button></span></a>
+  <a href="index4.html"><button type="submit" class="btn btn-default">Save &amp; Finish</button></a>
+
+  </div>
+</div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+<script>
+  function category(){
+  document.write("abc");
+   // <h5 style="font-weight: bold;">CATEGORY 1</h5>        
+   <input class="form-control" id="name" name="name" placeholder="Eg. Premier, First Class etc" type="text" required><br>
+   <h4 style="font-weight: bold;">PRICE</h4>
+   <input class="form-control" id="name" name="name" placeholder="" type="text" required><br>
+       }
+   var x = 3;
+   
+   for (var i = 0; i < x ; i++) {
+         category();
+       };    
+
+  (function ($) {
+  $.fn.numberPicker = function() {
+    var dis = 'disabled';
+    return this.each(function() {
+      var picker = $(this),
+          p = picker.find('button:last-child'),
+          m = picker.find('button:first-child'),
+          input = picker.find('input'),                 
+          min = parseInt(input.attr('min'), 10),
+          max = parseInt(input.attr('max'), 10),
+          inputFunc = function(picker) {
+            var i = parseInt(input.val(), 10);
+            if ( (i <= min) || (!i) ) {
+              input.val(min);
+              p.prop(dis, false);
+              m.prop(dis, true);
+            } else if (i >= max) {
+              input.val(max);
+              p.prop(dis, true); 
+              m.prop(dis, false);
+            } else {
+              p.prop(dis, false);
+              m.prop(dis, false);
+            }
+          },
+          changeFunc = function(picker, qty) {
+            var q = parseInt(qty, 10),
+                i = parseInt(input.val(), 10);
+            if ((i < max && (q > 0)) || (i > min && !(q > 0))) {
+              input.val(i + q);
+              inputFunc(picker);
+            }
+          };
+      m.on('click', function(){changeFunc(picker,-1);});
+      p.on('click', function(){changeFunc(picker,1);});
+      input.on('change', function(){inputFunc(picker);});
+      inputFunc(picker); //init
+
+    });
+}(jQuery);
+/*$(document).ready(function(){
+  var num=$(".txt_name").val();
+  console.log(num);
+});*/
+
+
+$(document).on('ready', function(){
+  
+  $('.plusminus').numberPicker();
+  
+  //add dynamically:
+  $('<div class="plusminus horiz"><button></button><input type="number" name="qty" value="1" min="1" max="5"><button></button></div>').numberPicker().appendTo('body');
+  });
+           /*for(var i = 0; i < 3; i++) {
+           var divBlock = document.createElement("div");                
+           divBlock.className = "repeat";*/
+           
+  };
+  
+});
+</script>
+<br><br><br>
+</body>
+</html>
