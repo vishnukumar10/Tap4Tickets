@@ -1,0 +1,70 @@
+el = $('.container')
+start_date_input = el.find('.start_date')
+end_date_input = el.find('.end_date')
+  
+date_picker = el.find('.date-picker').datepicker
+  numberOfMonths: 2
+  onSelect: (dateText, inst) ->
+   
+    current = el.data('current')
+    current ||= 'start_date'
+    
+    el.data current, $(@).datepicker 'getDate'
+   
+    el.find(".#{current}").val dateText
+    if current == "start_date" 
+      new_current = "end_date"
+      el.data new_current, null
+      el.find(".#{new_current}").val ''
+    else 
+      new_current = "start_date"
+    
+    el.data 'current', new_current
+  beforeShowDay: (date) ->
+    if el.data('start_date') and el.data('end_date') and el.data('start_date').getTime() <= date.getTime() and el.data('end_date').getTime() >= date.getTime()
+      className = 'date-range-selected'
+    else
+      className = ''
+          
+    [true, className]
+
+el.on 'change', 'select', ()->
+  value = $(@).val()
+  today = new Date()
+  switch value
+    when 'today'
+      start_date = end_date = today
+    when 'yesterday'
+      yesterday = new Date(today.setDate today.getDate() - 1)
+      start_date = end_date = yesterday
+    when 'week'
+     first = today.getDate() - today.getDay()
+     last = first + 6
+     start_date = new Date(today.setDate(first))
+     end_date = new Date(today.setDate(last))
+    when 'month'
+      start_date = new Date today.getFullYear(), today.getMonth(), 1
+      end_date = new Date today.getFullYear(), today.getMonth() + 1, 0
+    when 'year'
+      start_date = new Date today.getFullYear(), 0, 1
+      end_date = new Date today.getFullYear(), 11, 31
+    else
+      start_date = end_Date = null
+        
+  if start_date and end_date
+    start_date.setHours 0,0,0,0
+    end_date.setHours 0,0,0,0
+          
+    start_date_input.val $.datepicker.formatDate date_picker.datepicker('option', 'dateFormat'), start_date
+    end_date_input.val $.datepicker.formatDate date_picker.datepicker('option', 'dateFormat'), end_date
+   
+    el.data 'start_date', start_date
+    el.data 'end_date', end_date
+    
+  else
+    el.data 'start_date', null
+    el.data 'end_date', null
+        
+  date_picker.datepicker 'refresh'
+     
+    

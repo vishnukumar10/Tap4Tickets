@@ -1,0 +1,16 @@
+.container
+  .date-picker
+  .form
+    %label Date range: 
+    %select
+      %option{ value: '' } -- Custom date range --
+      %option{ value: 'today' } Today
+      %option{ value: 'yesterday' } Yesterday
+      %option{ value: 'week' } Current week
+      %option{ value: 'month' } Current month
+      %option{ value: 'year' } Current year
+    %br
+    %input.start_date
+    = " - "
+    %input.end_date
+  
